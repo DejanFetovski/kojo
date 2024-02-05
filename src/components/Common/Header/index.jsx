@@ -27,9 +27,7 @@ const MyNavbar = () => {
       <Navbar expand="lg" className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
           <Navbar.Brand href="/">
-            <a className="navbar-brand" href="/">
-              <img src="images/logo.png" alt="" />
-            </a>
+            <img src="images/logo.png" alt="" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-right" />
           <Navbar.Collapse id="navbar-right">
@@ -98,7 +96,7 @@ const MyNavbar = () => {
                 )}
               </div>
               <a
-                href="https://t.me/Kojoonsol"
+                href="https://t.me/Akiraonsol"
                 className="header-tele-ic"
                 rel="noreferrer"
                 target="_blank"

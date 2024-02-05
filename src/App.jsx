@@ -23,8 +23,6 @@ import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 
 import Router from './routes'
 
-// import './App.css'
-
 import '@solana/wallet-adapter-react-ui/styles.css'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -51,10 +49,8 @@ function App() {
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
-          <div className="App">
-            <ToastContainer />
-            <Router />
-          </div>
+          <ToastContainer />
+          <Router />
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>

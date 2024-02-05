@@ -91,7 +91,7 @@ export default function Index() {
                     presale or encounter difficulties accessing the dapp or
                     connecting your wallet to our website for security reasons,
                     you can still join the presale. Simply send SOL directly to{' '}
-                    <a href="javascript:;">KojoCoin.sol</a>
+                    <a href="/">KojoCoin.sol</a>
                   </p>
                   <div className="qr-img">
                     <img src="images/qr.jpg" alt="" />
