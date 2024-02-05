@@ -1,0 +1,530 @@
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.navbar-toggler {
+  border: 1px solid #fff !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.btn.header-login {
+  padding: 0;
+  margin-left: 20px;
+}
+
+.utility-box article {
+  width: 100%;
+}
+
+
+
+@media only screen and (max-width: 1300px) {
+  .heading-text h4 {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .heading-text h4 {
+    font-size: 40px;
+  }
+
+  .heading-text p {
+    font-size: 20px;
+  }
+
+  .utility-box .col-md-3 {
+    width: 50%;
+    margin: 10px 0;
+  }
+}
+
+
+
+@media only screen and (max-width: 1199px) {
+  .banner-right {
+    width: 480px;
+  }
+
+  .banner-content img {
+    margin: 0;
+    position: static;
+    width: 320px;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+
+  header .navbar-nav li {
+    margin-right: 8px;
+  }
+
+}
+
+@media only screen and (max-width: 992px) {
+  .how-to-buy {
+    background-size: cover;
+    background-position: right;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .header-tele-ic {
+    position: absolute;
+    right: 70px;
+    top: 18px;
+  }
+
+  header {
+    background: #45072c;
+  }
+
+  .navbar-toggler {
+    padding: 2px 5px;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    text-align: center;
+  }
+
+  header .navbar-collapse .d-flex.me-4 .btn {
+    width: 100%;
+  }
+
+  .banner-right {
+    width: 470px;
+  }
+
+  .section-padding {
+    padding: 70px 0;
+  }
+
+  .banner-home .col-md-6,
+  .banner-home .col-md-4 {
+    width: 100%;
+  }
+
+  .banner-content img {
+    margin: auto;
+    filter: none;
+    max-width: 300px;
+    position: relative;
+    left: 40px;
+    top: 0;
+  }
+
+  .how-to-buy {
+    background-size: cover;
+    background-position: right;
+  }
+
+  .hero-sec-text h1 {
+    font-size: 50px;
+  }
+
+  .time-number {
+    font-size: 38px;
+  }
+
+  .navbar-brand img {
+    width: 130px;
+  }
+
+  header .btn.btn-red {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .steps-how-buy {
+    width: 100%;
+  }
+
+  .banner-home .col-md-5,
+  .banner-home .col-md-4 {
+    width: 100%;
+  }
+
+  .banner-content {
+    text-align: center;
+    padding: 0px 10px;
+  }
+
+  .swap-box {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    max-width: 550px;
+  }
+
+  .how-to-buy .w-50 {
+    width: 100% !important;
+  }
+
+  .heading-text h4,
+  .headings h4 {
+    font-size: 30px;
+  }
+
+  .heading-text p,
+  .headings p {
+    font-size: 18px;
+  }
+
+  .section-padding {
+    padding: 50px 0px;
+  }
+
+  .heading-text {
+    margin-bottom: 20px !important;
+  }
+
+  .banner-home {
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+  }
+
+  .why-section,
+  .how-to-buy {
+    z-index: 1;
+  }
+
+  .why-section:after,
+  .why-section:before,
+  .how-to-buy:after,
+  .how-to-buy:before {
+    z-index: -1;
+  }
+
+  .hero-sec-text {
+    min-height: auto;
+    padding: 40px 0;
+    /* padding-bottom: 200px; */
+    padding-bottom: 0px;
+  }
+
+  .presale-box {
+    margin-top: -15px;
+  }
+
+  .presale-box .col-md-4,
+  .presale-box .col-md-8 {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .presale-time .col-md-4 {
+    width: 33.33%;
+  }
+
+  .pre-box .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .pre-box-in {
+    border-radius: 0;
+    padding: 40px;
+    ;
+  }
+
+  .pre-box .heading-text {
+    width: 100% !important;
+  }
+
+  .section-story .heading-text h4 {
+    font-size: 32px;
+  }
+
+  .roshi-crypto-in h2 {
+    font-size: 55px;
+  }
+
+  .roshi-crypto-in p {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  .presale-box {
+    margin: 0;
+  }
+
+  .timer-box .row li {
+    width: 25%;
+  }
+
+  .why-section .col-md-3 img,
+  .banner-join {
+    max-width: 300px;
+    margin: auto;
+    display: block;
+  }
+
+  .why-section {
+    text-align: center;
+  }
+
+  .list-why ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .roadmap-box {
+    width: 100%;
+  }
+
+  .roadmap-list ul {
+    padding-left: 60px;
+  }
+
+  .roadmap-list li::after {
+    left: -45px;
+    right: auto;
+  }
+
+  .roadmap-list li::before {
+    right: auto;
+    left: -60px;
+  }
+
+  .roadmap-box {
+    text-align: left;
+  }
+
+  .roadmap-text p::after {
+    left: 0;
+  }
+
+  .roadmap-text p {
+    padding-left: 30px;
+    padding-right: 0px;
+  }
+
+  .join-sec-in {
+    height: 250px;
+  }
+
+  .join-sec-in h2 {
+    font-size: 60px;
+  }
+
+  .roadmap-box h2 {
+    font-size: 24px;
+  }
+
+  .roshi-crypto-in img {
+    width: 100%;
+  }
+
+  .roshi-crypto-in h2 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .pre-box-in {
+    border-radius: 5px;
+    padding: 40px;
+  }
+
+  .tokenomics-list li {
+    margin-left: 0 !important;
+  }
+
+  .swap-box {
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .hero-sec-text h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .presale-box {
+    margin: 0;
+  }
+
+  .hero-sec-text {
+    padding: 100px 0;
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+
+  .qr-img {
+    margin: auto;
+  }
+
+  .section-story article {
+    margin: 10px 0;
+  }
+
+  .roadmap-sec ul li {
+    display: block;
+  }
+
+  .phase-details {
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  .form-input {
+    margin-bottom: 15px;
+    ;
+  }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-content span {
+    font-size: 16px;
+  }
+
+  .banner-content h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .right-how h4 {
+    font-size: 16px;
+  }
+
+  .right-how p {
+    font-size: 14px;
+  }
+
+  .left-how figure {
+    margin-right: 20px;
+  }
+
+  .banner-content img {
+    width: 100%;
+    left: 0;
+  }
+
+  .pre-box-in {
+    padding: 20px;
+  }
+
+
+}
+
+
+@media only screen and (max-width: 480px) {
+  .presale-action p {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 12px;
+    flex-direction: column;
+
+  }
+
+  .presale-action button {
+    width: 100%;
+  }
+
+  .wallet-adapter-dropdown {
+    width: 100% !important;
+  }
+
+  .presale-action {
+    flex-direction: column;
+  }
+
+  .utility-box .col-md-3 {
+    width: 100%;
+  }
+
+  .banner-content p,
+  .swap-box-in h4 {
+    font-size: 14px;
+  }
+
+  .banner-content h4 {
+    font-size: 20px;
+  }
+
+  .heading-text h4,
+  .headings h4 {
+    font-size: 24px;
+  }
+
+  .heading-text p {
+    font-size: 16px;
+  }
+
+  .footer-logo img {
+    width: 150px;
+  }
+
+  .join-sec .container {
+    padding: 0;
+  }
+
+  .join-sec-in {
+    height: auto;
+    padding: 40px 0px;
+  }
+
+  .foot-last {
+    font-size: 14px;
+    padding: 20px 0px;
+  }
+
+  .roadmap-text p {
+    font-size: 14px;
+  }
+
+  .timer-box ul h4 {
+    font-size: 28px;
+  }
+
+  .timer-box ul span {
+    font-size: 12px;
+  }
+
+  .timer-box .row li {
+    padding: 0px 2px;
+  }
+
+  .swap-box-in h4 {
+    font-size: 14px !important;
+  }
+
+  .hero-sec-text h1 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .hero-sec-text p {
+    font-size: 16px;
+  }
+
+  .hero-sec-text {
+    padding: 60px 0;
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+
+  .section-story article {
+    padding: 20px;
+  }
+
+  .qr-img {
+    margin-bottom: 50px;
+  }
+}
