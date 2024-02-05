@@ -150,7 +150,7 @@ export default function Index() {
         <section className="why-section section-padding">
           <div className="container">
             <div className="row align-items-center justify-content-center">
-              <h4 className="text-center">$Akira Admin Panel</h4>
+              <h4 className="text-center">$Kojo Admin Panel</h4>
               <div className="col-12 col-md-6 col-lg-6">
                 {isAdminWallet ? (
                   <form onSubmit={handleSubmit}>

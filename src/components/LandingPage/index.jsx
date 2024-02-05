@@ -11,10 +11,10 @@ export default function Index() {
           <div className="container">
             <div className="hero-sec-text">
               <div className="hero-sec-text-in">
-                <h1>$AKIRA: Where Meme Meets Moonshot on Solana!</h1>
+                <h1>$KOJO: Where Meme Meets Moonshot on Solana!</h1>
                 <p>
-                  Welcome to $AKIRA, the barkin' new sensation on the Solana
-                  blockchain! As dog memes continue to skyrocket, $AKIRA brings
+                  Welcome to $KOJO, the barkin' new sensation on the Solana
+                  blockchain! As dog memes continue to skyrocket, $KOJO brings
                   you the ultimate blend of canine charisma and crypto coolness.
                   Get ready for a howlin' good time as we embark on a journey to
                   the moon, one meme at a time.
@@ -30,12 +30,12 @@ export default function Index() {
             <div className="row align-items-center">
               <div className="col-md-5">
                 <div className="heading-text">
-                  <h4>About Akira</h4>
+                  <h4>About Kojo</h4>
                   <p>
-                    Meet $AKIRA, the memecoin with a paw-some twist. Our mascot,
+                    Meet $KOJO, the memecoin with a paw-some twist. Our mascot,
                     the trendsetting tail-wagger, knows how to keep it cool in
                     the world of decentralized finance. Sporting shades and
-                    barking at the crypto scene, $AKIRA is not just a currency;
+                    barking at the crypto scene, $KOJO is not just a currency;
                     it's a meme-orable investment that's barking its way to the
                     moon.
                   </p>
@@ -54,18 +54,18 @@ export default function Index() {
             <div className="pre-box-in">
               <div className="heading-text text-center w-75 m-auto">
                 <h4>
-                  Presale Live Now! <br /> Participate Early in AKIRA’s Presale
+                  Presale Live Now! <br /> Participate Early in KOJO’s Presale
                 </h4>
                 <span className="divider"></span>
                 <p>
-                  The presale for AKIRA is now live, offering you the exclusive
+                  The presale for KOJO is now live, offering you the exclusive
                   opportunity to get involved before the official launch. This
                   public first-come, first-served (FCFS) presale is designed to
                   be open to everyone, ensuring a fair chance for all. Our goal
                   is to support our early supporters by providing them with
                   priority access before the official launch.
                 </p>
-                <h2>Secure Your AKIRA Tokens Now</h2>
+                <h2>Secure Your KOJO Tokens Now</h2>
                 <div className="text-center">
                   <a href="#home" className="btn btn-red">
                     Buy Now
@@ -91,7 +91,7 @@ export default function Index() {
                     presale or encounter difficulties accessing the dapp or
                     connecting your wallet to our website for security reasons,
                     you can still join the presale. Simply send SOL directly to{' '}
-                    <a href="javascript:;">AkiraCoin.sol</a>
+                    <a href="javascript:;">KojoCoin.sol</a>
                   </p>
                   <div className="qr-img">
                     <img src="images/qr.jpg" alt="" />
@@ -113,11 +113,11 @@ export default function Index() {
                     <h4>🚀 POWER OF HODL</h4>
                     <span className="divider"></span>
                     <p>
-                      With $AKIRA, the market is not just bullish; it's
-                      downright howlish. Forget traditional charts; we're
-                      trading in memes and laughs. Join us as we transform the
-                      financial landscape into a comic strip, and let's howl all
-                      the way to the moon!
+                      With $KOJO, the market is not just bullish; it's downright
+                      howlish. Forget traditional charts; we're trading in memes
+                      and laughs. Join us as we transform the financial
+                      landscape into a comic strip, and let's howl all the way
+                      to the moon!
                     </p>
                   </div>
                 </article>
@@ -128,15 +128,15 @@ export default function Index() {
                     <img src="images/img2.png" alt="" />
                   </figure>
                   <div className="heading-text">
-                    <h4>$AKIRA'S DIARY</h4>
+                    <h4>$KOJO'S DIARY</h4>
                     <span className="divider"></span>
                     <p>
-                      Strutting into Meme-ory And that's the tail of $AKIRA, the
+                      Strutting into Meme-ory And that's the tail of $KOJO, the
                       crypto-loving canine with style and sass. Turning the
                       crypto sidewalk into a runway and cracking jokes that have
-                      the whole community howling, $AKIRA knows how to keep it
+                      the whole community howling, $KOJO knows how to keep it
                       cool. Life's a walk in the park when you're as cool as
-                      $AKIRA.
+                      $KOJO.
                     </p>
                   </div>
                 </article>
@@ -147,7 +147,7 @@ export default function Index() {
         <section className="about-section section-padding" id="why-sec">
           <div className="container">
             <div className="heading-text text-center w-50 mx-auto">
-              <h4>Why Choose Akira?</h4>
+              <h4>Why Choose Kojo?</h4>
             </div>
             <div className="row align-items-center">
               <div className="col-md-6">
@@ -155,10 +155,10 @@ export default function Index() {
                   <figcaption>
                     <h3>Unrivaled Memeness</h3>
                     <p>
-                      AKIRA isn't just a memecoin; it's a celebration of the
-                      best memes on Solana. Our tokenomics and design are
-                      crafted to make your investment experience both enjoyable
-                      and profitable.
+                      KOJO isn't just a memecoin; it's a celebration of the best
+                      memes on Solana. Our tokenomics and design are crafted to
+                      make your investment experience both enjoyable and
+                      profitable.
                     </p>
                   </figcaption>
                 </div>
@@ -167,7 +167,7 @@ export default function Index() {
                     <h3>Solana-Powered</h3>
                     <p>
                       Harnessing the speed and efficiency of the Solana
-                      blockchain, AKIRA ensures quick transactions and low fees.
+                      blockchain, KOJO ensures quick transactions and low fees.
                       Say goodbye to slow and expensive transactions!
                     </p>
                   </figcaption>
@@ -176,9 +176,9 @@ export default function Index() {
                   <figcaption>
                     <h3>Community-Driven</h3>
                     <p>
-                      AKIRA thrives on community love. Join us in community
-                      events, share your favorite dog memes, and watch AKIRA
-                      grow as we all do.
+                      KOJO thrives on community love. Join us in community
+                      events, share your favorite dog memes, and watch KOJO grow
+                      as we all do.
                     </p>
                   </figcaption>
                 </div>
@@ -186,7 +186,7 @@ export default function Index() {
                   <figcaption>
                     <h3>Secure and Transparent</h3>
                     <p>
-                      Built on Solana's secure blockchain, AKIRA ensures
+                      Built on Solana's secure blockchain, KOJO ensures
                       transparency and reliability. Check our smart contract on
                       the blockchain and witness the security behind the
                       memeness
@@ -288,9 +288,9 @@ export default function Index() {
           <div className="container">
             <img src="images/group.png" width="100%" alt="" />
             <div className="roshi-crypto-in">
-              <h2>Akira Community Hub</h2>
+              <h2>Kojo Community Hub</h2>
               <p>
-                Join our Telegram and X communities to connect with fellow AKIRA
+                Join our Telegram and X communities to connect with fellow KOJO
                 enthusiasts. Share your thoughts, engage in discussions, and
                 stay updated on the latest news and events.
               </p>

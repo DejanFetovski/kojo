@@ -57,7 +57,7 @@ const MyNavbar = () => {
                 href="#why-sec"
                 onClick={() => handleLinkClick('why-sec')}
               >
-                WHY Akira
+                WHY Kojo
               </Nav.Link>
               <Nav.Link
                 className={`nav-link ${
@@ -98,7 +98,7 @@ const MyNavbar = () => {
                 )}
               </div>
               <a
-                href="https://t.me/Akiraonsol"
+                href="https://t.me/Kojoonsol"
                 className="header-tele-ic"
                 rel="noreferrer"
                 target="_blank"
