@@ -19,8 +19,6 @@ body {
   width: 100%;
 }
 
-
-
 @media only screen and (max-width: 1300px) {
   .heading-text h4 {
     font-size: 50px;
@@ -42,8 +40,6 @@ body {
   }
 }
 
-
-
 @media only screen and (max-width: 1199px) {
   .banner-right {
     width: 480px;
@@ -62,7 +58,6 @@ body {
   header .navbar-nav li {
     margin-right: 8px;
   }
-
 }
 
 @media only screen and (max-width: 992px) {
@@ -84,7 +79,7 @@ body {
   }
 
   header {
-    background: #45072c;
+    background: #023e8a;
   }
 
   .navbar-toggler {
@@ -235,7 +230,6 @@ body {
   .pre-box-in {
     border-radius: 0;
     padding: 40px;
-    ;
   }
 
   .pre-box .heading-text {
@@ -256,7 +250,6 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-
   .presale-box {
     margin: 0;
   }
@@ -381,10 +374,7 @@ body {
 
   .form-input {
     margin-bottom: 15px;
-    ;
   }
-
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -417,10 +407,7 @@ body {
   .pre-box-in {
     padding: 20px;
   }
-
-
 }
-
 
 @media only screen and (max-width: 480px) {
   .presale-action p {
@@ -430,7 +417,6 @@ body {
     display: flex;
     margin-top: 12px;
     flex-direction: column;
-
   }
 
   .presale-action button {

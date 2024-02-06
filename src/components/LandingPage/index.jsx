@@ -94,7 +94,7 @@ export default function Index() {
                     <a href="/">KojoCoin.sol</a>
                   </p>
                   <div className="qr-img">
-                    <img src="images/qr.jpg" alt="" />
+                    <img src="images/qr.png" alt="" />
                   </div>
                 </div>
               </div>
