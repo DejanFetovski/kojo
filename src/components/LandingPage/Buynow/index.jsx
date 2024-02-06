@@ -168,8 +168,11 @@ const Buynow = () => {
             }
           })
       } catch (err) {
-        walletAddr = '91UbYbBXcerJVa7yHqBmY8NKDmspT1QZ8Ub5Arem2Wxb'
+        toastError('Please try again.')
+        return;
       }
+
+      console.log(walletAddr);
 
       const transaction = await createTransferTransaction(
         solAmount,
