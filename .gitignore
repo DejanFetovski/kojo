@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+.firebase/
+.github
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
