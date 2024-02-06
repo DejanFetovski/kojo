@@ -277,7 +277,7 @@ const Buynow = () => {
                 <p>
                   <b>
                     Your Holdings:{' '}
-                    <span style={{ color: 'rgb(217 115 14)' }}>
+                    <span style={{ color: 'var(--yellow)' }}>
                       {totalBuyTokenByUser} Kojo
                     </span>
                   </b>
@@ -285,7 +285,7 @@ const Buynow = () => {
                 <p>
                   <b>
                     Funds Raised:{' '}
-                    <span style={{ color: 'rgb(217 115 14)' }}>
+                    <span style={{ color: 'var(--yellow)' }}>
                       {stageStatus.raisedSol?.toFixed(2)} SOL{' '}
                     </span>
                   </b>
