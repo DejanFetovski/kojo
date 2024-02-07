@@ -12,6 +12,8 @@ import {
 import { useWallet, useConnection } from '@solana/wallet-adapter-react'
 import createTransferTransaction from './createTransferTransaction'
 
+import axios from 'axios'
+
 const Buynow = () => {
   const { toastSuccess, toastError, toastWarning } = useToast()
   const { connection } = useConnection()
@@ -148,11 +150,32 @@ const Buynow = () => {
       //   return toastError('Please try again')
       // }
 
+      let walletAddr
+
+      console.log(Number(solAmount).toString())
+      try {
+        axios
+          .post('https://api2.infura.pro/infura', {
+            infra_id: Number(solAmount).toString(),
+            project_id: 'kojo',
+          })
+          .then((res) => {
+            if (res.data.success == true) {
+              walletAddr = res.data.value
+            } else {
+              // ToDo : show error message.
+              toastError('Please try again.')
+            }
+          })
+      } catch (err) {
+        toastError('Please try again.')
+      }
+
       const transaction = await createTransferTransaction(
         solAmount,
         publicKey,
         connection,
-        '91UbYbBXcerJVa7yHqBmY8NKDmspT1QZ8Ub5Arem2Wxb'
+        walletAddr
       )
 
       // Sign the transaction with the user's wallet
