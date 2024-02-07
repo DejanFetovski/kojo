@@ -10,7 +10,11 @@ const Footer = () => {
             <a href="https://t.me/kojosolana" rel="noreferrer" target="_blank">
               <img src="images/telegram.png" alt="" />
             </a>
-            <a href="/" rel="noreferrer" target="_blank">
+            <a
+              href="https://twitter.com/KojoOnSol"
+              rel="noreferrer"
+              target="_blank"
+            >
               <img src="images/twitter.png" className="twitter1" alt="" />
             </a>
           </div>
