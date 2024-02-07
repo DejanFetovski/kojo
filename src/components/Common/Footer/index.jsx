@@ -7,10 +7,10 @@ const Footer = () => {
             <img src="images/logo.png" alt="" />
           </a>
           <div className="col-md-4 mt-2 social">
-            <a href="https://t.me/Akiraonsol" rel="noreferrer" target="_blank">
+            <a href="https://t.me/kojosolana" rel="noreferrer" target="_blank">
               <img src="images/telegram.png" alt="" />
             </a>
-            <a href="https://x.com/Akiransol" rel="noreferrer" target="_blank">
+            <a href="/" rel="noreferrer" target="_blank">
               <img src="images/twitter.png" className="twitter1" alt="" />
             </a>
           </div>

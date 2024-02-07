@@ -96,7 +96,7 @@ const MyNavbar = () => {
                 )}
               </div>
               <a
-                href="https://t.me/Akiraonsol"
+                href="https://t.me/kojosolana"
                 className="header-tele-ic"
                 rel="noreferrer"
                 target="_blank"

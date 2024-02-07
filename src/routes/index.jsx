@@ -7,7 +7,7 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />} />
-      <Route path="/admin" element={<AdminPanel />} />
+      {/* <Route path="/admin" element={<AdminPanel />} /> */}
       <Route path="/404" element={<Page404 />} />
       <Route
         path="/asset-manifest.json"
