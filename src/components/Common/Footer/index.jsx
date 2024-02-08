@@ -11,7 +11,7 @@ const Footer = () => {
               <img src="images/telegram.png" alt="" />
             </a>
             <a
-              href="https://twitter.com/KojoOnSol"
+              href="https://x.com/kojosolana?s=21"
               rel="noreferrer"
               target="_blank"
             >
