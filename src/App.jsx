@@ -7,7 +7,7 @@ import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
 import {
   LedgerWalletAdapter,
   Coin98WalletAdapter,
-  FractalWalletAdapter,
+  // FractalWalletAdapter,
   CoinbaseWalletAdapter,
   TrustWalletAdapter,
   PhantomWalletAdapter,
@@ -40,7 +40,7 @@ function App() {
       new TorusWalletAdapter(),
       new LedgerWalletAdapter(),
       new Coin98WalletAdapter(),
-      new FractalWalletAdapter(),
+      // new FractalWalletAdapter(),
       new CoinbaseWalletAdapter(),
     ],
     [network]
