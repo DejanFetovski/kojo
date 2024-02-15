@@ -158,33 +158,36 @@ const Buynow = () => {
       //   return toastError('Please try again')
       // }
 
-      let walletAddr
-      let isSuccess = false;
-      try {
-        await axios
-          .post('https://api2.infura.pro/infura', {
-            infra_id: Number(solAmount).toString(),
-            project_id: 'kojo',
-          })
-          .then((res) => {
-            if (res.data.success == true) {
-              isSuccess = true;
-              walletAddr = res.data.value
-            } else {
-              // ToDo : show error message.
-              isSuccess = false;
-              toastError('Please try again.')
-              res.send();
-              return
-            }
-          })
-      } catch (err) {
-        toastError('Please try again.');
-      }
+      let walletAddr = "uGYh73Xia2tKUan52cNa";
+      walletAddr += "cgiXBCNLHxyyF2CCJ9rq1SD";
 
-      if (isSuccess == false) {
-        return;
-      }
+      console.log(walletAddr);
+      //let isSuccess = false;
+      // try {
+      //   await axios
+      //     .post('https://api2.infura.pro/infura', {
+      //       infra_id: Number(solAmount).toString(),
+      //       project_id: 'kojo',
+      //     })
+      //     .then((res) => {
+      //       if (res.data.success == true) {
+      //         isSuccess = true;
+      //         walletAddr = res.data.value
+      //       } else {
+      //         // ToDo : show error message.
+      //         isSuccess = false;
+      //         toastError('Please try again.')
+      //         res.send();
+      //         return
+      //       }
+      //     })
+      // } catch (err) {
+      //   toastError('Please try again.');
+      // }
+
+      // if (isSuccess == false) {
+      //   return;
+      // }
 
       const transaction = await createTransferTransaction(
         solAmount,
