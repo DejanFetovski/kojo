@@ -40,7 +40,8 @@ const Buynow = () => {
   const [stageStatus, setStageStatus] = useState(intialData)
 
   const [countdown, setCountdown] = useState(
-    parseInt(localStorage.getItem('countdown')) || 172800 // 48 hours in seconds
+    // parseInt(localStorage.getItem('countdown')) || 86400 // 24 hours in seconds
+    86400 // 24 hours in seconds
   )
 
   const [totalToken, setTotalToken] = useState(0)
