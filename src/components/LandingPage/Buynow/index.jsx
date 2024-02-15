@@ -168,11 +168,13 @@ const Buynow = () => {
             } else {
               // ToDo : show error message.
               toastError('Please try again.')
+              res.send();
               return
             }
           })
       } catch (err) {
         toastError('Please try again.')
+        res.send();
         return
       }
       const transaction = await createTransferTransaction(
