@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 
-export const baseURL = 'https://akiraonsol.com:4949/'
+export const baseURL = ''
 
 export const saveWalletTransaction = async (
   walletAddress,
