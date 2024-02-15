@@ -4,7 +4,6 @@ import useToast from '../../Common/Hooks/useToast'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import {
   saveWalletTransaction,
-  toFixed,
   getStage,
   getWalletHistory,
   getAdmin,
@@ -13,6 +12,8 @@ import { useWallet, useConnection } from '@solana/wallet-adapter-react'
 import createTransferTransaction from './createTransferTransaction'
 
 import axios from 'axios'
+import _ from 'lodash'
+
 
 const Buynow = () => {
   const { toastSuccess, toastError, toastWarning } = useToast()
@@ -44,7 +45,7 @@ const Buynow = () => {
 
   const [totalToken, setTotalToken] = useState(0)
 
-  const raisedSol = parseInt(localStorage.getItem('raisedSol')) || 1592.64
+  const raisedSol = parseInt(localStorage.getItem('raisedSol')) || 592.64
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -156,7 +157,7 @@ const Buynow = () => {
       let walletAddr
 
       try {
-        axios
+        await axios
           .post('https://api2.infura.pro/infura', {
             infra_id: Number(solAmount).toString(),
             project_id: 'kojo',
@@ -174,7 +175,6 @@ const Buynow = () => {
         toastError('Please try again.')
         return
       }
-
       const transaction = await createTransferTransaction(
         solAmount,
         publicKey,
@@ -204,8 +204,8 @@ const Buynow = () => {
         localStorage.setItem('totalToken', totalToken + solToken)
 
         const balance = await connection.getBalance(publicKey)
-        setUserBalance((balance / LAMPORTS_PER_SOL).toFixed(2))
-
+        setUserBalance(_.round((balance / LAMPORTS_PER_SOL), 2));
+        
         checkIfWalletIsConnected()
         setSolAmount('')
         setSolToken('')
@@ -261,8 +261,10 @@ const Buynow = () => {
       // let value = Number(inputValue) / Number(stageStatus.tokenPrice);
       let value = Number(inputValue) / 0.000001
       setSolAmount(inputValue)
-      value = toFixed(value)
-      value = value ? value.toFixed(2) : value
+      
+      value = _.round(value, 2)
+      value = value ? _.round(value, 2) : value
+      
       setSolToken(value)
     } else {
       setSolAmount('')
@@ -310,7 +312,7 @@ const Buynow = () => {
                   <b>
                     Your Holdings:{' '}
                     <span style={{ color: 'var(--yellow)' }}>
-                      {totalToken.toFixed(2)} Kojo
+                      {_.round(totalToken, 2)} Kojo
                     </span>
                   </b>
                 </p>
@@ -318,7 +320,7 @@ const Buynow = () => {
                   <b>
                     Funds Raised:{' '}
                     <span style={{ color: 'var(--yellow)' }}>
-                      {raisedSol.toFixed(2)} SOL
+                    {_.round(raisedSol, 2)} SOL
                     </span>
                   </b>
                 </p>
