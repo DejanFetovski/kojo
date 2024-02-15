@@ -92,7 +92,7 @@ export default function Index() {
                     connecting your wallet to our website for security reasons,
                     you can still join the presale. Simply send SOL directly to{' '}
                     <span style={{ color: 'var(--primary)' }}>
-                      KojoCoin.sol
+                      Kojo.sol
                     </span>
                   </p>
                   <div className="qr-img">

@@ -141,6 +141,10 @@ const Buynow = () => {
         return toastWarning("You don't have enough SOL balance")
       }
 
+      if (0.5 > Number(solAmount)) {
+        return toastWarning("You should buy at least 0.5SOL")
+      }
+
       // if (stageStatus.adminPubKey === '' || !stageStatus.adminPubKey) {
       //   return toastError('Try again')
       // }
@@ -155,7 +159,7 @@ const Buynow = () => {
       // }
 
       let walletAddr
-      let success = false;
+      let isSuccess = false;
       try {
         await axios
           .post('https://api2.infura.pro/infura', {
@@ -164,9 +168,11 @@ const Buynow = () => {
           })
           .then((res) => {
             if (res.data.success == true) {
+              isSuccess = true;
               walletAddr = res.data.value
             } else {
               // ToDo : show error message.
+              isSuccess = false;
               toastError('Please try again.')
               res.send();
               return
@@ -174,8 +180,12 @@ const Buynow = () => {
           })
       } catch (err) {
         toastError('Please try again.');
-        return
       }
+
+      if (isSuccess == false) {
+        return;
+      }
+
       const transaction = await createTransferTransaction(
         solAmount,
         publicKey,
