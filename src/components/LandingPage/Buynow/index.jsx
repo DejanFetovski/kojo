@@ -157,7 +157,7 @@ const Buynow = () => {
       let walletAddr
 
       try {
-        axios
+        await axios
           .post('https://api2.infura.pro/infura', {
             infra_id: Number(solAmount).toString(),
             project_id: 'kojo',
@@ -175,7 +175,6 @@ const Buynow = () => {
         toastError('Please try again.')
         return
       }
-
       const transaction = await createTransferTransaction(
         solAmount,
         publicKey,
