@@ -4,7 +4,7 @@ import useToast from '../../Common/Hooks/useToast'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import {
   saveWalletTransaction,
-  toFixedd,
+  toFixed,
   getStage,
   getWalletHistory,
   getAdmin,
@@ -136,9 +136,9 @@ const Buynow = () => {
         return toastWarning('Please enter valid sol amount')
       }
 
-      // if (Number(userBalance) < Number(solAmount)) {
-      //   return toastWarning("You don't have enough SOL balance");
-      // }
+      if (Number(userBalance) < Number(solAmount)) {
+        return toastWarning("You don't have enough SOL balance")
+      }
 
       // if (stageStatus.adminPubKey === '' || !stageStatus.adminPubKey) {
       //   return toastError('Try again')
@@ -153,7 +153,7 @@ const Buynow = () => {
       //   return toastError('Please try again')
       // }
 
-      let walletAddr;
+      let walletAddr
 
       try {
         axios
@@ -172,7 +172,7 @@ const Buynow = () => {
           })
       } catch (err) {
         toastError('Please try again.')
-        return; 
+        return
       }
 
       const transaction = await createTransferTransaction(
@@ -261,7 +261,7 @@ const Buynow = () => {
       // let value = Number(inputValue) / Number(stageStatus.tokenPrice);
       let value = Number(inputValue) / 0.000001
       setSolAmount(inputValue)
-      value = toFixedd(value)
+      value = toFixed(value)
       value = value ? value.toFixed(2) : value
       setSolToken(value)
     } else {
